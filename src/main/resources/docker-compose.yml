@@ -1,0 +1,14 @@
+version : "3"
+services: 
+ my-mongo-db: 
+  image: mongo:latest
+  container_name: my-mongo-db
+  ports:
+   - 27017:27017
+ spring-mongo:
+  image: spring-mongo-image
+  container_name: spring-mongo
+  ports:
+   - 8080:8080
+  links:
+   - my-mongo-db
